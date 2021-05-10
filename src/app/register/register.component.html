@@ -1,0 +1,68 @@
+<div>
+  <div class="global_form">
+    <div class="global_form_shadow">
+  <div class="mat-display-2">
+    <p>Register</p>
+  </div>
+
+
+  <form class="example-form">
+
+
+    <div class="example-container">
+      <mat-form-field appearance="fill" class="inputwraper">
+        <mat-label>Enter firstname</mat-label>
+        <input matInput placeholder="max 128 characters" class="inp">
+
+      </mat-form-field>
+
+
+    </div>
+    <div class="example-container">
+      <mat-form-field appearance="fill" class="inputwraper">
+        <mat-label>Enter lastname</mat-label>
+        <input matInput placeholder="max 128 characters" class="inp">
+
+      </mat-form-field>
+
+
+    </div>
+    <div class="example-container" >
+      <mat-form-field appearance="fill" class="inputwraper">
+        <mat-label>Enter your username</mat-label>
+        <input matInput placeholder="6 character/ upercase leter/ special letter/ uniq" [formControl]="username" required>
+        <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
+
+      </mat-form-field>
+
+
+    </div>
+    <div class="example-container">
+      <mat-form-field appearance="fill" class="inputwraper">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" class="inp">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+    </div>
+    <div class="example-container">
+      <mat-form-field appearance="fill" class="inputwraper">
+        <mat-label>Monthly income</mat-label>
+        <input matInput type="number" class="example-right-align" class="inp">
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>.00</span>
+      </mat-form-field>
+      <div>
+        <button mat-flat-button class="dugmeReg">Register</button>
+      </div>
+    </div>
+
+
+  </form>
+  </div>
+  </div>
+
+</div>
