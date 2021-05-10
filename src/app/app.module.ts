@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import {AppRoutingModule, routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MaterialModule} from "./shared/material.module";
 import {FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
@@ -18,7 +18,8 @@ import { NavigationComponent } from './navigation/navigation.component';
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    NavigationComponent
+    NavigationComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -27,6 +28,7 @@ import { NavigationComponent } from './navigation/navigation.component';
     BrowserModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+
 
 
     HttpClientModule,

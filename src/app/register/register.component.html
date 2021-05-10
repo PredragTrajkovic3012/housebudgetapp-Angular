@@ -6,13 +6,13 @@
   </div>
 
 
-  <form class="example-form">
+  <form class="example-form" [formGroup]="registerForm">
 
 
     <div class="example-container">
       <mat-form-field appearance="fill" class="inputwraper">
         <mat-label>Enter firstname</mat-label>
-        <input matInput placeholder="max 128 characters" class="inp">
+        <input matInput placeholder="max 128 characters" class="inp" formControlName="firstname">
 
       </mat-form-field>
 
@@ -21,7 +21,7 @@
     <div class="example-container">
       <mat-form-field appearance="fill" class="inputwraper">
         <mat-label>Enter lastname</mat-label>
-        <input matInput placeholder="max 128 characters" class="inp">
+        <input matInput placeholder="max 128 characters" class="inp" formControlName="lastname">
 
       </mat-form-field>
 
@@ -30,7 +30,7 @@
     <div class="example-container" >
       <mat-form-field appearance="fill" class="inputwraper">
         <mat-label>Enter your username</mat-label>
-        <input matInput placeholder="6 character/ upercase leter/ special letter/ uniq" [formControl]="username" required>
+        <input matInput placeholder="6 character/ upercase leter/ special letter/ uniq" [formControl]="username" required formControlName="username">
         <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
 
       </mat-form-field>
@@ -40,7 +40,7 @@
     <div class="example-container">
       <mat-form-field appearance="fill" class="inputwraper">
         <mat-label>Enter your password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" class="inp">
+        <input matInput [type]="hide ? 'password' : 'text'" class="inp" formControlName="password">
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                 [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -51,12 +51,12 @@
     <div class="example-container">
       <mat-form-field appearance="fill" class="inputwraper">
         <mat-label>Monthly income</mat-label>
-        <input matInput type="number" class="example-right-align" class="inp">
+        <input matInput type="number" class="example-right-align" class="inp" formControlName="monthly_income">
         <span matPrefix>$&nbsp;</span>
         <span matSuffix>.00</span>
       </mat-form-field>
       <div>
-        <button mat-flat-button class="dugmeReg">Register</button>
+        <button type="submit"  (click)="onRegister()" mat-flat-button class="dugmeReg">Register</button>
       </div>
     </div>
 

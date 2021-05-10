@@ -10,6 +10,10 @@
   //position: fixed;
   line-height: 20px;
   text-align: center;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav div.logo {
