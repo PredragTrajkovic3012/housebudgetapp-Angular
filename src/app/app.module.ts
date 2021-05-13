@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule, DomSanitizer} from '@angular/platform-browser';
+
 
 import {AppRoutingModule, routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,12 @@ import { RegisterComponent } from './register/register.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { LoginComponent } from './login/login.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { TransactionsComponent } from './transactions/transactions.component';
+import {LoadingSpinnerComponent} from "./shared/loading-spinner/loading-spinner.component";
+import {AuthService} from "./login/auth.service";
+import {RouterGuardGuard} from "./router-guard.guard";
+import {MatIconModule} from "@angular/material/icon";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 
 
@@ -19,6 +26,11 @@ import { NavigationComponent } from './navigation/navigation.component';
     RegisterComponent,
     LoginComponent,
     NavigationComponent,
+    TransactionsComponent,
+    LoadingSpinnerComponent,
+
+
+
 
   ],
   imports: [
@@ -28,15 +40,17 @@ import { NavigationComponent } from './navigation/navigation.component';
     BrowserModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-
-
-
     HttpClientModule,
+    MatIconModule,
+    FlexLayoutModule
+
+
+
 
 
 
   ],
-  providers: [],
+  providers: [AuthService,RouterGuardGuard,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

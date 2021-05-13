@@ -5,13 +5,22 @@
         <p>Log in</p>
       </div>
 
+      <div class="global_form" *ngIf="isLoading">
 
-      <form class="example-form" [formGroup]="loginForm">
+        <app-loading-spinner></app-loading-spinner>
+      </div>
+      <div class="alert alert-danger"  *ngIf="error!=''">
+        <p>{{error}}</p>
+      </div>
+      <form class="example-form" [formGroup]="loginForm" *ngIf="!isLoading">
 
         <div class="example-container" >
           <mat-form-field appearance="fill" class="inputwraper">
             <mat-label>Enter your username</mat-label>
-            <input matInput placeholder="6 character/ upercase leter/ special letter/ uniq" [formControl]="username" required formControlName="username">
+            <input matInput placeholder="6 character/ upercase leter/ special letter/ uniq" [formControl]="username" required formControlName="username"
+            class="form-control"
+            ngModel
+            name="username">
             <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
 
           </mat-form-field>
@@ -21,7 +30,10 @@
         <div class="example-container">
           <mat-form-field appearance="fill" class="inputwraper">
             <mat-label>Enter your password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" class="inp" formControlName="password">
+            <input matInput [type]="hide ? 'password' : 'text'" class="form-control" formControlName="password"
+            ngModel name="password"
+            required
+            minlength="6">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                     [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -31,7 +43,7 @@
         </div>
         <div class="example-container">
           <div>
-            <button mat-flat-button class="dugmeReg" (click)="loginuser()">Log in</button>
+            <button mat-flat-button class="dugmeReg" (click)="loginuser()" type="submit" [disabled]="!loginForm.valid">Log in</button>
           </div>
         </div>
 

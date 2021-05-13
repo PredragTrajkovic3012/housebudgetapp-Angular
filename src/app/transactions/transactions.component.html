@@ -1,0 +1,145 @@
+
+
+<div fxLayout="column" fxLayoutAlign="space-between center" class="global_form">
+  <div fxLayout="row" fxLayoutAlign="center center" class="navbar">
+    <!--Ovoo je mininav -->
+
+    <nav class="nav">
+      <div class="container">
+
+        <div id="mainListDiv" class="main_list">
+          <ul class="navlinks">
+
+            <li>
+              <a routerLink="/login" routerLinkActive="">
+              <mat-icon class="smallericon green-icon">home</mat-icon>
+                Home
+              </a>
+            </li>
+            <li>
+              <a routerLink="/register" routerLinkActive="">
+                <mat-icon class="smallericon green-icon"svgIcon="wallet"></mat-icon>
+                wallet
+              </a>
+            </li>
+            <li>
+              <a routerLink="/register" routerLinkActive="">
+                <mat-icon class="smallericon green-icon"svgIcon="category"></mat-icon>
+                category
+              </a>
+            </li>
+
+
+
+          </ul>
+        </div>
+        <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+      </div>
+    </nav>
+
+
+
+
+    <!--Ovo je mini nav -->
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="global_datapicker" >
+    <!--datapicker -->
+    <div fxLayout="column" fxLayoutAlign="center center" >
+
+      <p class="datapicker">
+        Avgust
+        <button mat-icon-button class="chevron">
+          <mat-icon class="chevron">chevron_left</mat-icon>
+        </button>
+        <button mat-icon-button >
+          <mat-icon class="chevron">chevron_right</mat-icon>
+        </button>
+
+      </p>
+      <p class="datapicker2">20 sep,2021</p>
+
+    </div>
+    <div >
+      <!--option-->
+      <mat-form-field appearance="fill" style="width: 120px">
+        <mat-label>Select</mat-label>
+        <mat-select>
+          <mat-option value="one">First option</mat-option>
+          <mat-option value="two">Second option</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+  </div>
+  <!--datapicker-->
+  <!--addtransaction-->
+  <div fxLayout="column" fxLayoutAlign="space-between center" class="addtransaction" >
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="balance-details">
+      <p class="balance">Balance</p>
+      <p class="details">Details</p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="expanses">
+      <div fxLayout="column" fxLayoutAlign="center center" class="expanses2">
+        <p class="exp">Expanses</p>
+        <p class="expnum">3500</p>
+      </div>
+      <button mat-icon-button  style="margin-right:2px">
+        <mat-icon svgIcon="plus"></mat-icon>
+      </button>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="income" >
+      <div fxLayout="column" fxLayoutAlign="center center" class="income2" >
+        <p class="inc">Income</p>
+        <p class="incnum">3500</p>
+      </div>
+      <button mat-icon-button  style="margin-right:2px">
+        <mat-icon svgIcon="plus-green" ></mat-icon>
+      </button>
+    </div>
+
+  </div>
+  <!--addtransaction-->
+
+</div>
+
+
+
+
+
+
+
+ <!-- <nav class="nav">
+    <div class="main_list">
+
+      <ul class="navlinks">
+
+        <li>
+          <a routerLink="/transactions" routerLinkActive="">
+            <mat-icon class="smallericon green-icon"svgIcon="myhome"></mat-icon>
+            Home
+
+          </a>
+        </li>
+        <li>
+          <a routerLink="/login" routerLinkActive="">
+            <img src="/assets/images/wallet.svg">Wallet
+          </a>
+        </li>
+        <li>
+          <a routerLink="/register" routerLinkActive="">
+            <img src="/assets/images/category.svg">Category
+          </a>
+        </li>
+
+
+      </ul>
+
+
+    </div>
+  </nav>
+-->
+
