@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {TransactionsComponent} from './transactions/transactions.component';
@@ -12,27 +12,29 @@ const routes: Routes = [
 
     path: '',
     component: HomeComponent,
+    canActivate:[RouterGuardGuard],
     children: [
       {path: '', redirectTo: 'transactions', pathMatch: 'full'},
-      {path: 'transactions',
+      {
+        path: 'transactions',
         component: TransactionsComponent
       },
       {path: 'expanses', component: ExpansesComponent},
 
 
-
     ]
 
-    // canActivate:[RouterGuardGuard]
   },
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
 
-  ];
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
 

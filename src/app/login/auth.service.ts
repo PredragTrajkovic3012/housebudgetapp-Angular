@@ -21,12 +21,12 @@ export class AuthService {
 
   setData(data)
   {
-    this.idUser=data.id_user
+    this.idUser=data;
 
   }
 
-  checkUser() {
-    const _header = {headers: new HttpHeaders({Authorization: localStorage.getItem("token")})};
+  checkUser(token) {
+    const _header = {headers: new HttpHeaders({Authorization: token})};
     return this.http.post('/api/users/login', _header);
 
   }
@@ -38,6 +38,7 @@ export class AuthService {
     delete this.idUser;
 
   }
+
   logout(){
     this.remove_token();
     this.remove_data()

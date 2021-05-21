@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import {BrowserModule, DomSanitizer} from '@angular/platform-browser';
 
 
-import {AppRoutingModule, routingComponents} from './app-routing.module';
+import {AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MaterialModule} from "./shared/material.module";
 import {FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
