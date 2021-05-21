@@ -1,18 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginComponent} from "./login/login.component";
-import {RegisterComponent} from "./register/register.component";
-import {TransactionsComponent} from "./transactions/transactions.component";
-import {RouterGuardGuard} from "./router-guard.guard";
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
+import {TransactionsComponent} from './transactions/transactions.component';
+import {RouterGuardGuard} from './router-guard.guard';
+import {ExpansesComponent} from './expanses/expanses.component';
+import {HomeComponent} from './home/home.component';
 
 const routes: Routes = [
   {
-    path:'transactions',
-    component:TransactionsComponent,
+
+    path: '',
+    component: HomeComponent,
+    children: [
+      {path: '', redirectTo: 'transactions', pathMatch: 'full'},
+      {path: 'transactions',
+        component: TransactionsComponent
+      },
+      {path: 'expanses', component: ExpansesComponent},
+
+
+
+    ]
+
     // canActivate:[RouterGuardGuard]
   },
-  {path:'login',component:LoginComponent},
-  {path:'register',component:RegisterComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
 
   ];
 
@@ -21,4 +35,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents=[LoginComponent,RegisterComponent]
+

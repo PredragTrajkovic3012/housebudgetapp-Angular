@@ -1,87 +1,8 @@
-.global_form{
 
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/*-- Inspiration taken from abdo steif -->
+/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
 
-  color: rgba(16, 16, 16, 0.85);
-  font-family: Lato;
-
-
-}
-
-.smallericon{
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  /* identical to box height */
-  width: 1.5rem;
-  height: 1.5rem;
-  color: rgba(0, 0, 0, 0.85);
-}
-
-
-
-.nav div.main_list ul {
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 20px;
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  flex-direction: column;
-  color: rgba(16, 16, 16, 0.85);
-  font-family: Lato;
-}
-
-.nav div.main_list ul li {
-  width: auto;
-  height: 20px;
-  padding: 0;
-  padding-right: 3rem;
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.85);
-  line-height: 65px;
-  font-size: 14px;
-}
-
-.nav div.main_list ul li a {
-  text-decoration: none;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 17px;
-  color: rgba(0, 0, 0, 0.85);
-}
-
-.nav div.main_list ul li a:hover {
-  color: #5E9C60
-}
-
-::ng-deep.green-icon{
-  svg{
-    path{
-      fill: #111111;
-
-      outline-color: #111111;
-    }
-  }
-}
-::ng-deep.black-icon{
-  svg{
-    path{
-      fill: #5E9C60;
-
-      outline-color: #5E9C60;
-    }
-  }
-
-}
-
-
+/* Navbar section */
 
 .nav {
   width: 100%;
@@ -114,8 +35,7 @@
 
 .nav div.main_list {
   height: 20px;
-  flex-direction: row;
-
+  float: right;
 }
 
 .nav div.main_list ul {
@@ -125,7 +45,6 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  flex-direction: row;
 }
 
 .nav div.main_list ul li {
@@ -133,20 +52,13 @@
   height: 20px;
   padding: 0;
   padding-right: 3rem;
-  flex-direction: row;
 }
 
 .nav div.main_list ul li a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.85);
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  /* identical to box height */
-
-
-  color: rgba(0, 0, 0, 0.85);
+  line-height: 65px;
+  font-size: 2.4rem;
 }
 
 .nav div.main_list ul li a:hover {
@@ -218,21 +130,8 @@
   .nav div.main_list ul li a {
     text-align: center;
     width: 100%;
+    font-size: 3rem;
     padding: 20px;
-    /* identical to box height */
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-    /* identical to box height */
-
-    color: rgba(0, 0, 0, 0.85);
-
-
-    /* identical to box height */
-
-
-    color: rgba(0, 0, 0, 0.85);
   }
   .nav div.media_button {
     display: block;
@@ -453,184 +352,19 @@
   }
 }
 
-
-
-
-.datapicker{
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 43px;
-
-  color: rgba(16, 16, 16, 0.85);
-  margin-left: 25px;
-  margin-top:10px;
-  margin-bottom: 2px;
-
-
+.logo {
+  float: left;
+  width: auto;
+  height: auto;
+  padding-left: 40px;
+  padding-top: 25px;
 }
-.datapicker2{
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-  color: rgba(16, 16, 16, 0.6);
-  margin-left: -95px;
-  margin-top: -25px;
+.firstrow{
+  margin-left: -33%;
 }
 
-.chevron
-{
-  margin-bottom: 15px;
-
+.secondrow{
+  margin-left: -35%;
 }
-
-.datapicker3{
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  color: #000000;
-  margin-left: 230px;
-  margin-top: 10px;
-}
-.global_datapicker
-{
-  //: 150px;
-  width: 100%;
-  max-width: 430px;
-
-}
-
-.balance-details{
-  width: 100%;
-
-  max-width: 360px;
-  margin-left: 0px;
-
-
-}
-.addtransaction
-{
-  margin-top:30px;
-  width: 500px;
-
-
-}
-.balance{
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  /* identical to box height */
-
-
-  color: #1C092C;
-
-}
-.details
-{
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  /* identical to box height */
-
-
-  color: rgba(0, 0, 0, 0.5);
-
-}
-
-.expanses
-{
-  width: 363px;
-  height: 68px;
-  left: 532px;
-  top: 249px;
-
-  background: #F5F5F5;
-  border-radius: 10px;
-  margin-bottom: 5px;
-
-}
-
-.expanses2
-{
-  width: 170px;
-  margin-left: -50px;
-
-}
-.exp{
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-
-  color: #000000;
-
-  opacity: 0.7;
-  margin-bottom: 0px;
-  margin-top: 10px;
-}
-.expnum
-{
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 24px;
-  color: rgba(16, 16, 16, 0.85);
-}
-
-
-.income
-{
-  width: 363px;
-  height: 68px;
-  left: 532px;
-  top: 322px;
-
-  background: rgba(127, 196, 129, 0.14);
-  border-radius: 10px;
-
-}
-
-.income2
-{
-  width: 170px;
-  margin-left: -50px;
-
-}
-.inc{
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-
-  color: #5E9C60;
-}
-.incnum
-{
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 24px;
-  color: #5E9C60;
-}
-.spenton-seeall
-{
-  width: 100%;
-  max-width: 360px;
-  margin-left: 0px;
-  margin-top:15px;
-  margin-bottom: 15px;
-
-}
-
-.spenton
-{
-  padding-right: 10px;
-
-
-
-}
-
-
 
 

@@ -17,6 +17,10 @@ import {AuthService} from "./login/auth.service";
 import {RouterGuardGuard} from "./router-guard.guard";
 import {MatIconModule} from "@angular/material/icon";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import { ExpansesComponent } from './expanses/expanses.component';
+import { Navigation2Component } from './navigation2/navigation2.component';
+import { SpentonComponent } from './spenton/spenton.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -28,6 +32,10 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     NavigationComponent,
     TransactionsComponent,
     LoadingSpinnerComponent,
+    ExpansesComponent,
+    Navigation2Component,
+    SpentonComponent,
+    HomeComponent,
 
 
 
