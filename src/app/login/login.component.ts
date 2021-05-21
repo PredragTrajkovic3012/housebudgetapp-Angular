@@ -53,6 +53,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const tokenInStorage = localStorage.getItem('token');
+    if (tokenInStorage){
+      this.router.navigateByUrl('/transactions');
+    }
   }
 
   loginuser() {
