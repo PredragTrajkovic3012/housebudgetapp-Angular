@@ -10,21 +10,40 @@
   </div>
   <p class="choose">Choose category</p>
   <!--sekcija biranja-->
-  <div fxLayout="column" fxLayoutAlign="center center">
-
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="global-expanses">
+    <div fxLayout="row" class="icon-and-text">
+      <mat-icon svgIcon="groceries" class="spenticon"></mat-icon>
+      <div class="text">
+        <p class="ponwhat1">Eating out</p>
+        <p class="ponwhat2">Restorant</p>
+      </div>
+    </div>
+    <mat-icon svgIcon="check" class="checkicon"></mat-icon>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="global-expanses2">
+    <div fxLayout="row" class="icon-and-text">
+      <mat-icon svgIcon="groceries" class="spenticon"></mat-icon>
+      <div class="text">
+        <p class="ponwhat1">Eating out</p>
+        <p class="ponwhat2">Restorant</p>
+      </div>
+    </div>
+    <mat-icon svgIcon="square" class="checkicon2" ></mat-icon>
   </div>
   <!--sekcija biranja-->
   <!--sekcija dugmadi-->
-  <div fxLayout="column" fxLayoutAlign="center center">
+  <div fxLayout="column" fxLayoutAlign="center center" class="dugmici">
     <div>
-      <button type="submit"  mat-flat-button class="dugmeReg">Add</button>
+      <button type="submit"  mat-flat-button class="dugmeReg" >Add</button>
     </div>
     <div>
-      <button type="submit"  mat-flat-button class="dugmeCancel">Cancel</button>
+      <button type="submit"  mat-flat-button class="dugmeCancel" (click)="onClose()">Cancel</button>
     </div>
 
   </div>
   <!--sekcija dugmadi-->
+
+
 
 </div>
 </div>

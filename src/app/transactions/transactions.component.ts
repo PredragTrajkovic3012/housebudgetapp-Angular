@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {AuthService} from "../login/auth.service";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {AuthService} from '../login/auth.service';
+import {ExpansesComponent} from "../expanses/expanses.component";
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import {AddincomeComponent} from "../addincome/addincome.component";
 
 @Component({
   selector: 'app-transactions',
@@ -10,13 +13,34 @@ import {AuthService} from "../login/auth.service";
 export class TransactionsComponent implements OnInit {
 
   constructor(
-    private http:HttpClient,
-    private auth:AuthService
+    private http: HttpClient,
+    private auth: AuthService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
     const _header = {headers: new HttpHeaders({Authorization: this.auth.token})};
     this.http.get('/api/transactions', _header).subscribe(r => {
+      console.log(r);
+    });
+  }
+  doSomething(){
+    console.log('alo');
+  }
+
+  // tslint:disable-next-line:typedef
+  onExpensesOpen(){
+    this.dialog.open(ExpansesComponent, <MatDialogConfig>{
+      data: {exampl:"pera"}
+    }).afterClosed().subscribe(r=>{
+      console.log(r);
+    });
+  }
+
+  onAddIncomeOpen(){
+    this.dialog.open(AddincomeComponent, <MatDialogConfig>{
+      data: {exampl:"pera income"}
+    }).afterClosed().subscribe(r=>{
       console.log(r);
     });
   }

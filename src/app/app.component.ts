@@ -25,6 +25,15 @@ export class AppComponent {
     iconRegistry.addSvgIcon(
       'plus-green',
       sanitizer.bypassSecurityTrustResourceUrl('assets/images/plus-circle-green.svg'));
+    iconRegistry.addSvgIcon(
+      'groceries',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/groceries.svg'));
+    iconRegistry.addSvgIcon(
+      'check',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/check.svg'));
+    iconRegistry.addSvgIcon(
+      'square',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/square.svg'));
 
 
   }

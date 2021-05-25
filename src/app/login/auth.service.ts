@@ -27,7 +27,7 @@ export class AuthService {
 
   checkUser(token) {
     const _header = {headers: new HttpHeaders({Authorization: token})};
-    return this.http.post('/api/users/login', _header);
+    return this.http.get('/api/users/check', _header);
 
   }
   remove_token() {

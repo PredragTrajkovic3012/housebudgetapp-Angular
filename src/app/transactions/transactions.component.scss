@@ -481,6 +481,7 @@
 {
   margin-bottom: 15px;
 
+
 }
 
 .datapicker3{
@@ -510,7 +511,13 @@
 .addtransaction
 {
   margin-top:30px;
-  width: 500px;
+  width: 431px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 5px;
+  padding-bottom: 30px;
+  padding-top: 15px;
 
 
 }
@@ -520,6 +527,7 @@
   font-size: 14px;
   line-height: 17px;
   /* identical to box height */
+
 
 
   color: #1C092C;
@@ -532,6 +540,7 @@
   font-size: 14px;
   line-height: 17px;
   /* identical to box height */
+  cursor: pointer;
 
 
   color: rgba(0, 0, 0, 0.5);
@@ -617,7 +626,7 @@
 {
   width: 100%;
   max-width: 360px;
-  margin-left: 0px;
+  //margin-left: 315px;
   margin-top:15px;
   margin-bottom: 15px;
 
@@ -625,9 +634,19 @@
 
 .spenton
 {
-  padding-right: 10px;
+  //padding-right: 10px;
+  padding-top: 0px;
 
 
+
+
+}
+.showspances{
+  padding: 15px 36px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 431px;
 
 }
 

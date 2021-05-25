@@ -19,7 +19,6 @@ const routes: Routes = [
         path: 'transactions',
         component: TransactionsComponent
       },
-      {path: 'expanses', component: ExpansesComponent},
 
 
     ]

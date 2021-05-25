@@ -21,6 +21,7 @@ import { ExpansesComponent } from './expanses/expanses.component';
 import { Navigation2Component } from './navigation2/navigation2.component';
 import { SpentonComponent } from './spenton/spenton.component';
 import { HomeComponent } from './home/home.component';
+import { AddincomeComponent } from './addincome/addincome.component';
 
 
 
@@ -36,6 +37,7 @@ import { HomeComponent } from './home/home.component';
     Navigation2Component,
     SpentonComponent,
     HomeComponent,
+    AddincomeComponent,
 
 
 

@@ -23,7 +23,7 @@ export class RouterGuardGuard implements CanActivate {
         if (tokenInStorage) {
           this.auth.checkUser(tokenInStorage).subscribe((r: any) => {
             this.auth.setToken(tokenInStorage);
-            this.auth.setData(r);
+            //this.auth.setData(r);
             resolve(true);
           }, error => {
             this.auth.logout();

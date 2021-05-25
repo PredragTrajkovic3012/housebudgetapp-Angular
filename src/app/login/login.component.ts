@@ -57,6 +57,7 @@ export class LoginComponent implements OnInit {
     if (tokenInStorage){
       this.router.navigateByUrl('/transactions');
     }
+
   }
 
   loginuser() {
@@ -66,22 +67,22 @@ export class LoginComponent implements OnInit {
         id_tenant: "00000000-1111-2222-3333-000000000001"
       }
       this.isLoading = true;
-      this.http.post("/api/users/login", data).subscribe((r:any) => {
+      this.http.post('/api/users/login', data).subscribe((r:any) => {
         console.log(r);
-        this.auth.setToken(r.id_session)
+        this.auth.setToken(r.id_session);
 
 
 
 
 
         this.isLoading = false;
-        this.router.navigateByUrl("/transactions")
+        this.router.navigateByUrl('/transactions');
       }, error => {
         console.log(error);
         this.error = 'An error occured!';
         this.isLoading = false;
 
-      })
+      });
 
     } else {
       console.log(this.loginForm.value);

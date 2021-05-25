@@ -1,6 +1,6 @@
 .globalExpanses
 {
-  width: 500px;
+  width: 415px;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -12,6 +12,7 @@
   font-family: Lato;
   background: #FFFFFF;
   border-radius: 20px;
+  margin-left: 115px;
 
 }
 .background{
@@ -29,7 +30,8 @@
   line-height: 22px;
   color: rgba(16, 16, 16, 0.85);
   margin-left: -375px;
-  margin-top: 5px;
+
+  margin-top: -85px;
 
 }
 .enterfield
@@ -87,3 +89,69 @@ button.dugmeReg{
   line-height: 22px;
   color: #5E9C60;
 }
+.checkicon{
+  color:#5E9C60;
+  background-color: #5E9C60;
+  margin-right: 12px;
+  width: 18px;
+  height: 18px;
+
+}
+.checkicon2{
+
+  margin-right: 12px;
+  width: 20px;
+  height: 20px;
+
+}
+.spenticon
+{
+  width: 34px;
+  height: 34px;
+
+
+}
+.text{
+  margin-left: 20px;
+
+}
+.global-expanses{
+  width: 370px;
+  margin-top: 15px;
+  margin-left: -100px;
+  background: rgba(127, 196, 129, 0.08);
+  border-radius: 10px;
+}
+.global-expanses2{
+  width: 370px;
+  margin-top: 15px;
+  margin-left: -100px;
+  background: #FFFFFF;
+  border-radius: 10px;
+}
+
+.ponwhat1{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 0px;
+  margin-top:10px;
+  color: rgba(0, 0, 0, 0.85);
+}
+.ponwhat2{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.dugmici
+{
+  margin-top: 20px;
+
+}
+.icon-and-text{
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
