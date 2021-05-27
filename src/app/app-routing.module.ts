@@ -6,6 +6,8 @@ import {TransactionsComponent} from './transactions/transactions.component';
 import {RouterGuardGuard} from './router-guard.guard';
 import {ExpansesComponent} from './expanses/expanses.component';
 import {HomeComponent} from './home/home.component';
+import {Register2Component} from "./register2/register2.component";
+import {Login2Component} from "./login2/login2.component";
 
 const routes: Routes = [
   {
@@ -26,6 +28,8 @@ const routes: Routes = [
   },
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'register2', component: Register2Component},
+  {path: 'login2', component: Login2Component},
 
 
 ];

@@ -1,0 +1,50 @@
+<app-navigation2 style="width: 100%;"></app-navigation2>
+<div fxLayout="column" fxLayoutAlign="space-between center" class="globalwrapper">
+
+  <div fxLayout="column" fxLayoutAlign="center center" class="imagediv" >
+    <img src="assets/images/reg-log-img.svg" >
+  </div>
+  <div fxLayout="column" fxLayoutAlign="center center" class="welcome-text" >
+    <p class="register_login_p1">Welcome to House-budget app</p>
+    <p class="register_login_p2" >Please fill in the fields to continue</p>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="space-between center" class="input-div" [formGroup]="registerForm">
+    <mat-form-field appearance="fill" class="inputs">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstname">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="inputs">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastname">
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="inputs">
+      <mat-label>Enter your username</mat-label>
+      <input matInput placeholder="6 character/ upercase leter/ special letter/ uniq"  required formControlName="username">
+      <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="inputs">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" class="inp" formControlName="password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="inputwraper">
+      <mat-label>Monthly income</mat-label>
+      <input matInput type="number" class="example-right-align" class="inp" formControlName="monthly_income">
+      <span matPrefix>$&nbsp;</span>
+      <span matSuffix>.00</span>
+    </mat-form-field>
+
+  </div>
+  <div>
+    <button type="submit"  mat-flat-button class="dugmeReg" (click)="onRegister()" >Register</button>
+  </div>
+  <p class="register_login_p2" style="margin-top: 14px;">Alerdy have an account? <a routerLink="/login" style="color: #5E9C60;">Log in</a></p>
+
+
+
+</div>

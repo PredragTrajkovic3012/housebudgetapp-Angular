@@ -10,7 +10,10 @@ import {AddincomeComponent} from "../addincome/addincome.component";
   templateUrl: './transactions.component.html',
   styleUrls: ['./transactions.component.scss']
 })
-export class TransactionsComponent implements OnInit {
+export class TransactionsComponent implements OnInit
+{
+  detailflag:boolean=false;
+
 
   constructor(
     private http: HttpClient,
@@ -43,6 +46,9 @@ export class TransactionsComponent implements OnInit {
     }).afterClosed().subscribe(r=>{
       console.log(r);
     });
+  }
+  showDetails(){
+    this.detailflag=!this.detailflag;
   }
 
 }

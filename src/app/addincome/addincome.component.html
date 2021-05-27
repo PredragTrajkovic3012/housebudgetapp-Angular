@@ -1,0 +1,28 @@
+<div fxLayout="column" fxLayoutAlign="space-between center" class="global-addincome" [formGroup]="incomeForm">
+  <div fxLayout="row" fxLayoutAlign="start center" class="firstdiv" fxLayoutGap="118px" >
+    <button mat-icon-button class="chevron1" (click)="onClose()">
+      <mat-icon class="chevron">chevron_left</mat-icon>
+    </button>
+    <p class="paragraph">Add Income</p>
+  </div>
+  <div class="enterfield" >
+    <mat-form-field appearance="fill" class="enterfield2" style="width: 366px;">
+      <mat-label>Amount</mat-label>
+      <input matInput type="number" class="example-right-align" formControlName="amount">
+      <span matSuffix class="dollar">$&nbsp;</span>
+    </mat-form-field>
+  </div>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width" style="width: 366px;">
+      <mat-label>Enter description</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="Sushi" formControlName="description">
+    </mat-form-field>
+
+  </form>
+
+  <div>
+    <button type="submit"  mat-flat-button class="dugmeReg" (click)="addIncome()" >Add</button>
+  </div>
+
+</div>

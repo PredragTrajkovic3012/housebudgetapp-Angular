@@ -1,56 +1,47 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {MessageComponent} from '../message/message.component';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AuthService} from '../login/auth.service';
+import {MessageComponent} from '../message/message.component';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
-  selector: 'app-expanses',
-  templateUrl: './expanses.component.html',
-  styleUrls: ['./expanses.component.scss']
+  selector: 'app-addincome',
+  templateUrl: './addincome.component.html',
+  styleUrls: ['./addincome.component.scss']
 })
-export class ExpansesComponent implements OnInit {
-  durationInSeconds = 5;
-  expansesForm: FormGroup = this.fb.group({
+export class AddincomeComponent implements OnInit {
+  incomeForm: FormGroup = this.fb.group({
 
     amount: this.fb.control('', [Validators.required]),
     description: this.fb.control('', [Validators.required]),
 
-
-
-
   });
 
   constructor(
-    // tslint:disable-next-line:variable-name
     private fb: FormBuilder,
     private http: HttpClient,
-
-    // tslint:disable-next-line:variable-name
-    private _snackBar: MatSnackBar,
-    public dialogRef: MatDialogRef<ExpansesComponent>,
     private auth: AuthService,
-
-
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    private _snackBar: MatSnackBar,
+    public dialogRef: MatDialogRef<AddincomeComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) { }
 
   ngOnInit(): void {
     console.log(this.data);
-
   }
   // tslint:disable-next-line:typedef
   onClose(){
     this.dialogRef.close('pera se zatvorio u sebe');
   }
   // tslint:disable-next-line:typedef
-  addExpanses()
+  addIncome()
   {
-    if (this.expansesForm.valid){
+    if (this.incomeForm.valid){
       const data = {
-        ...this.expansesForm.value,
-        ttype: 'outcome'
+        ...this.incomeForm.value,
+        ttype: 'income'
       };
       // @ts-ignore
 
@@ -63,11 +54,9 @@ export class ExpansesComponent implements OnInit {
       });
 
     }else{
-      console.log(this.expansesForm.value);
+      console.log(this.incomeForm.value);
     }
 
   }
-
-
 
 }

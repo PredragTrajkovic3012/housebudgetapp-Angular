@@ -22,6 +22,9 @@ import { Navigation2Component } from './navigation2/navigation2.component';
 import { SpentonComponent } from './spenton/spenton.component';
 import { HomeComponent } from './home/home.component';
 import { AddincomeComponent } from './addincome/addincome.component';
+import { MessageComponent } from './message/message.component';
+import { Register2Component } from './register2/register2.component';
+import { Login2Component } from './login2/login2.component';
 
 
 
@@ -38,6 +41,9 @@ import { AddincomeComponent } from './addincome/addincome.component';
     SpentonComponent,
     HomeComponent,
     AddincomeComponent,
+    Register2Component,
+    Login2Component,
+
 
 
 
@@ -60,6 +66,7 @@ import { AddincomeComponent } from './addincome/addincome.component';
 
 
   ],
+  entryComponents:[MessageComponent],
   providers: [AuthService,RouterGuardGuard,],
   bootstrap: [AppComponent]
 })

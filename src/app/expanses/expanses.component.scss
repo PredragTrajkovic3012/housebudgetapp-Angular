@@ -43,7 +43,7 @@
 .enterfield2
 {
   width: 366px;
-  margin-left: -115px;
+  margin-left: -110px;
 }
 .choose
 {
@@ -153,5 +153,51 @@ button.dugmeReg{
 .icon-and-text{
   margin-top: 10px;
   margin-left: 15px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.example-full-width {
+  width: 100%;
+
+  margin-left:-110px;
+
+}
+
+::ng-deep .mat-form-field {
+  .mat-input-element {
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .mat-form-field-label {
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .mat-form-field-underline {
+    background-color: rgba(0, 0, 0, 0.38);
+  }
+  .mat-form-field-ripple {
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .mat-form-field-required-marker {
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+}
+
+::ng-deep .mat-form-field.mat-focused {
+  .mat-form-field-label {
+    color: #5E9C60;
+  }
+  .mat-form-field-ripple {
+    background-color: #5E9C60;
+  }
+  .mat-form-field-required-marker {
+    color: #5E9C60;
+  }
+  .mat-input-element {
+    color: rgba(0, 0, 0, 0.87);
+  }
 }
 

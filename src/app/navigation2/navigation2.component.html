@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="space-between start" >
+<div fxLayout="row" fxLayoutAlign="space-between start" class="gn" >
 
   <div class="logo">
     <img src="/assets/images/appicon.svg">
@@ -10,6 +10,7 @@
         <ul class="navlinks" *ngIf="auth.token">
 
           <li><a href="#">About</a></li>
+
 <!--          <li><a routerLink="/expanses" routerLinkActive="">Expanses</a></li>-->
           <li><a routerLink="/transactions" routerLinkActive="">Transactions</a></li>
         </ul>
@@ -31,6 +32,8 @@
           <ng-container *ngIf="!auth.token">
             <li ><a routerLink="/login" routerLinkActive="">Log in</a></li>
             <li ><a routerLink="/register" routerLinkActive="">Register</a></li>
+            <li><a routerLink="/register2" routerLinkActive="">Register2</a></li>
+            <li><a routerLink="/login2" routerLinkActive="">Log in2</a></li>
           </ng-container>
 
           <li *ngIf="auth.token"><a (click)="auth.logout()">Log out</a></li>
@@ -46,3 +49,5 @@
   </div>
 
 </div>
+
+

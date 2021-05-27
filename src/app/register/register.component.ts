@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
       }
       this.http.post("/api/users/register", data).subscribe(r =>{
         console.log(r);
-      })
+      });
 
     }else{
       console.log(this.registerForm.value);

@@ -41,9 +41,6 @@
       </div>
     </nav>
 
-
-
-
     <!--Ovo je mini nav -->
   </div>
   <div fxLayout="row" fxLayoutAlign="space-between center" class="global_datapicker" >
@@ -80,8 +77,14 @@
   <div fxLayout="column" fxLayoutAlign="space-between center" class="addtransaction" >
     <div fxLayout="row" fxLayoutAlign="space-between center" class="balance-details">
       <p class="balance" (click)="doSomething()">Balance</p>
-      <p class="details">Details</p>
+      <p class="details" (click)="showDetails()">Details</p>
     </div>
+<!--    <ng-container *ngIf="detailflag">-->
+      <div fxLayout="column" fxLayoutAlign="space-between center" class="div-details" >
+        <p class="p-details1">total</p>
+        <p class="p-details2">$30000</p>
+      </div>
+<!--    </ng-container>-->
     <div fxLayout="row" fxLayoutAlign="space-between center" class="expanses">
       <div fxLayout="column" fxLayoutAlign="center center" class="expanses2">
         <p class="exp">Expanses</p>

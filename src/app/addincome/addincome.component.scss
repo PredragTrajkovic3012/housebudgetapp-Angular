@@ -1,0 +1,82 @@
+.global-addincome
+{
+  width: 415px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //margin-top:80px;
+
+  margin:0 auto;
+  margin-top:15px;
+  font-family: Lato;
+  background: #FFFFFF;
+  border-radius: 20px;
+
+
+
+}
+.firstdiv{
+  margin-left: -280px;
+  padding-bottom: 60px;
+}
+
+
+
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+  margin-left: 25px;
+}
+
+.paragraph{
+  font-family: Lato, "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(16, 16, 16, 0.85);
+  margin-top: 10px;
+
+}
+
+.chevron1
+{
+  //margin-bottom: 15px;
+  //margin-left: 50px;
+  margin-left: 130px;
+
+
+}
+.dollar{
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #5E9C60;
+
+}
+
+button.dugmeReg{
+
+  width: 366px;
+  height: 48px;
+  background: #5E9C60;
+  border-radius: 10px;
+  color:#FFFFFF;
+  margin-left: 0px;;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 19px;
+  margin-top:50px;
+
+}
+
+

@@ -1,0 +1,42 @@
+<app-navigation2 style="width: 100%;"></app-navigation2>
+<div fxLayout="column" fxLayoutAlign="space-between center" class="globalwrapper">
+
+  <div fxLayout="column" fxLayoutAlign="center center" class="imagediv" >
+    <img src="assets/images/reg-log-img.svg" >
+  </div>
+  <div fxLayout="column" fxLayoutAlign="center center" class="welcome-text" >
+    <p class="register_login_p1">Welcome to House-budget app</p>
+    <p class="register_login_p2" >Please fill in the fields to continue</p>
+  </div>
+  <div class="global_form" *ngIf="isLoading">
+
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div class="alert alert-danger"  *ngIf="error!=''">
+    <p>{{error}}</p>
+  </div>
+
+  <div fxLayout="column" fxLayoutAlign="space-between center" class="input-div" [formGroup]="loginForm" *ngIf="!isLoading">
+
+    <mat-form-field appearance="fill" class="inputs">
+      <mat-label>Enter your username</mat-label>
+      <input matInput placeholder="6 character/ upercase leter/ special letter/ uniq"  required [formControl]="username" >
+      <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="inputs">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" class="inp"  required formControlName="password" minlength="6">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+
+  </div>
+  <div>
+    <button (click)="loginuser()" type="submit"  mat-flat-button class="dugmeReg">Register</button>
+  </div>
+  <p class="register_login_p2" style="margin-top: 14px;">Don't have an account? <a routerLink="/register2" style="color: #5E9C60;">Register</a></p>
+
+</div>
