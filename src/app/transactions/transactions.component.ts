@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AuthService} from '../login/auth.service';
-import {ExpansesComponent} from "../expanses/expanses.component";
-import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
-import {AddincomeComponent} from "../addincome/addincome.component";
+import {ExpansesComponent} from '../expanses/expanses.component';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {AddincomeComponent} from '../addincome/addincome.component';
+import {MessageComponent} from '../message/message.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-transactions',
@@ -12,13 +14,15 @@ import {AddincomeComponent} from "../addincome/addincome.component";
 })
 export class TransactionsComponent implements OnInit
 {
-  detailflag:boolean=false;
+  detailflag = false;
+  currentBalanceForU = '0';
 
 
   constructor(
     private http: HttpClient,
     private auth: AuthService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private _snackBar: MatSnackBar,
   ) { }
 
   ngOnInit(): void {
@@ -26,6 +30,7 @@ export class TransactionsComponent implements OnInit
     this.http.get('/api/transactions', _header).subscribe(r => {
       console.log(r);
     });
+    this.getTotalBalanceforUser();
   }
   doSomething(){
     console.log('alo');
@@ -33,22 +38,38 @@ export class TransactionsComponent implements OnInit
 
   // tslint:disable-next-line:typedef
   onExpensesOpen(){
-    this.dialog.open(ExpansesComponent, <MatDialogConfig>{
-      data: {exampl:"pera"}
-    }).afterClosed().subscribe(r=>{
+    this.dialog.open(ExpansesComponent, {
+      data: {ttype: 'outcome'}
+    } as MatDialogConfig).afterClosed().subscribe(r => {
       console.log(r);
     });
   }
 
   onAddIncomeOpen(){
-    this.dialog.open(AddincomeComponent, <MatDialogConfig>{
-      data: {exampl:"pera income"}
-    }).afterClosed().subscribe(r=>{
+    this.dialog.open(AddincomeComponent, {
+      data: {exampl: 'pera income'}
+    } as MatDialogConfig).afterClosed().subscribe(r => {
       console.log(r);
     });
   }
   showDetails(){
-    this.detailflag=!this.detailflag;
+    this.detailflag = !this.detailflag;
   }
+
+  getTotalBalanceforUser()
+  {
+
+      const _header = {headers: new HttpHeaders({Authorization: this.auth.token})};
+
+      this.http.get('/api/transactionsbalance', _header).subscribe((r : any) => {
+        console.log(r.current_balance);
+        this.currentBalanceForU=r.current_balance;
+       // this._snackBar.openFromComponent(MessageComponent, {duration: 3000, panelClass: ['white-snackbar']});
+      });
+
+  }
+
+
+
 
 }

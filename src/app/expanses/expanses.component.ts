@@ -13,6 +13,7 @@ import {AuthService} from '../login/auth.service';
 })
 export class ExpansesComponent implements OnInit {
   durationInSeconds = 5;
+  categories = [];
   expansesForm: FormGroup = this.fb.group({
 
     amount: this.fb.control('', [Validators.required]),
@@ -38,6 +39,7 @@ export class ExpansesComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.data);
+    this.getAllCategories();
 
   }
   // tslint:disable-next-line:typedef
@@ -50,7 +52,7 @@ export class ExpansesComponent implements OnInit {
     if (this.expansesForm.valid){
       const data = {
         ...this.expansesForm.value,
-        ttype: 'outcome'
+        ttype: this.data.ttype
       };
       // @ts-ignore
 
@@ -65,6 +67,21 @@ export class ExpansesComponent implements OnInit {
     }else{
       console.log(this.expansesForm.value);
     }
+
+  }
+
+  getAllCategories()
+  {
+
+    // tslint:disable-next-line:variable-name
+    const _header = {headers: new HttpHeaders({Authorization: this.auth.token})};
+
+    this.http.get('/api/transactiontypeall', _header).subscribe((r : any) => {
+      this.categories=r;
+      console.log(r);
+      //this.currentBalanceForU=r.current_balance;
+      // this._snackBar.openFromComponent(MessageComponent, {duration: 3000, panelClass: ['white-snackbar']});
+    });
 
   }
 

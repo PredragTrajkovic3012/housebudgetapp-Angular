@@ -17,25 +17,21 @@
   </div>
   <p class="choose">Choose category</p>
   <!--sekcija biranja-->
-  <div fxLayout="row" fxLayoutAlign="space-between center" class="global-expanses">
-    <div fxLayout="row" class="icon-and-text">
-      <mat-icon svgIcon="groceries" class="spenticon"></mat-icon>
-      <div class="text">
-        <p class="ponwhat1">Eating out</p>
-        <p class="ponwhat2">Restorant</p>
+
+  <div style="height: 350px;overflow: auto;" class="scrollpane">
+    <div *ngFor="let category of categories" fxLayout="row" fxLayoutAlign="space-between center" class="global-expanses2">
+      <div fxLayout="row" class="icon-and-text">
+        <mat-icon [svgIcon]="category.image" class="spenticon"></mat-icon>
+        <div class="text">
+          <p class="ponwhat1">{{category.name}}</p>
+          <p class="ponwhat2">{{category.description}}</p>
+        </div>
       </div>
+      <!--    <mat-icon svgIcon="square" class="checkicon2" ></mat-icon>-->
+      <mat-radio-button >
+      </mat-radio-button>
     </div>
-    <mat-icon svgIcon="check" class="checkicon"></mat-icon>
-  </div>
-  <div fxLayout="row" fxLayoutAlign="space-between center" class="global-expanses2">
-    <div fxLayout="row" class="icon-and-text">
-      <mat-icon svgIcon="groceries" class="spenticon"></mat-icon>
-      <div class="text">
-        <p class="ponwhat1">Eating out</p>
-        <p class="ponwhat2">Restorant</p>
-      </div>
-    </div>
-    <mat-icon svgIcon="square" class="checkicon2" ></mat-icon>
+
   </div>
   <!--sekcija biranja-->
   <!--sekcija dugmadi-->

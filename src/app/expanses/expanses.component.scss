@@ -128,6 +128,7 @@ button.dugmeReg{
   margin-left: -100px;
   background: #FFFFFF;
   border-radius: 10px;
+  margin-left: 10px;
 }
 
 .ponwhat1{
@@ -200,4 +201,111 @@ button.dugmeReg{
     color: rgba(0, 0, 0, 0.87);
   }
 }
+
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: #5E9C60 !important;
+}
+
+::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: #5E9C60 !important;
+}
+
+::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: #5E9C60 !important;
+}
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: white!important;
+  border-radius: 5px!important;
+  color: white !important;
+}
+::ng-deep.mat-form-field-flex{
+  background:#FFFFFF;
+}
+::ng-deep {
+
+
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    background: #FFFFFF !important;
+  }
+}
+
+
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.inputs{
+  width: 381px;
+}
+
+button.dugmeReg{
+
+  margin-top: 50px;
+  width: 386px;
+  height: 48px;
+
+
+  background: #5E9C60;
+  border-radius: 10px;
+  color:#FFFFFF;
+
+}
+
+.scrollpane
+{
+  height: 350px;
+  overflow: auto;
+  width: 100%;
+  margin-left: -105px;
+  background-color: rgba(127, 196, 129, 0.08);
+
+}
+
+
+::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+  background-color: #FFFFFF !important;
+
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: #5E9C60 !important;
+}
+::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #5E9C60 !important;
+}
+
+
+//::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+//  opacity: 0.5 !important;     /*click effect color change*/
+//  background-color:#5E9C60 !important;
+//}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+  border-color:#5E9C60 !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle{
+  color:#5E9C60 !important;
+  background-color:#5E9C60 !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+  background-color:#5E9C60 !important;
+}
+
+::ng-deep .mat-ripple-element{
+  display: none;
+}
+
+
 
