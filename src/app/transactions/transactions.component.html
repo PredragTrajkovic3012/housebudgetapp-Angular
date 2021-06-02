@@ -60,17 +60,7 @@
       <p class="datapicker2">20 sep,2021</p>
 
     </div>
-    <div >
-      <!--option-->
-      <mat-form-field appearance="fill" style="width: 120px">
-        <mat-label>Select</mat-label>
-        <mat-select>
-          <mat-option value="one">First option</mat-option>
-          <mat-option value="two">Second option</mat-option>
-        </mat-select>
-      </mat-form-field>
 
-    </div>
   </div>
   <!--datapicker-->
   <!--addtransaction-->
@@ -113,18 +103,47 @@
       <p class="balance">Spent on</p>
       <p class="details">See all</p>
     </div>
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="spenton" >
-      <app-spenton></app-spenton>
-      <app-spenton></app-spenton>
-      <app-spenton></app-spenton>
-      <app-spenton></app-spenton>
+    <div fxLayout="row" fxLayoutGap="10px">
+      <div   fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="spenton"  *ngFor="let spent of spentOn">
+        <!--sekcija spenton -->
 
+        <div fxLayout="column" fxLayoutAlign="space-between center" class="divspenton" >
+          <p class="ponwhat">{{spent?.transaction_type?.name}}</p>
+          <p class="pprice">{{spent?.amount}}</p>
+          <mat-icon [svgIcon]="spent?.transaction_type?.image" class="spenticon"></mat-icon>
+        </div>
 
+        <!--sekcija spenton -->
+
+      </div>
     </div>
 
 
   </div>
   <!--spent on-->
+
+  <div  fxLayout="column" fxLayoutAlign="space-between center" class="historybox" >
+    <p class="history">History</p>
+    <div *ngFor="let transaction of transactions" fxLayout="row" fxLayoutAlign="space-between center"  class="infoholder" >
+      <div fxLayout="row" fxLayoutAlign="center center" class="date-icon">
+        <div fxLayout="column" fxLayoutAlign="space-between center" >
+          <p class="day">{{transaction.date.slice(0,2) }}</p>
+          <p class="month"> {{transaction.date.slice(2,7) }}</p>
+        </div>
+        <mat-icon [svgIcon]="transaction?.transaction_type?.image +'H'" style="margin-left:15px; width:28px; margin-bottom: 7px; height: 28px"></mat-icon>
+<!--        {{transaction.transaction_type?.image}}-->
+
+      </div>
+      <div fxLayout="column" fxLayoutAlign="space-between center" class="history-info" >
+        <p class="historyp1">{{transaction.description}}</p>
+        <p class="historyp2">{{transaction.amount+' '}}<span class="valute">USD</span></p>
+      </div>
+
+
+    </div>
+
+  </div>
+
 
 
 </div>

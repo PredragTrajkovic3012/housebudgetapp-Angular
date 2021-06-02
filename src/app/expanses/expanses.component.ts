@@ -13,11 +13,14 @@ import {AuthService} from '../login/auth.service';
 })
 export class ExpansesComponent implements OnInit {
   durationInSeconds = 5;
+  selectedTransactionType = 'No transaction type';
   categories = [];
   expansesForm: FormGroup = this.fb.group({
 
     amount: this.fb.control('', [Validators.required]),
     description: this.fb.control('', [Validators.required]),
+    //category: this.fb.control('', [Validators.required]),
+    transaction_type:this.fb.control('',[Validators.required])
 
 
 
@@ -35,7 +38,7 @@ export class ExpansesComponent implements OnInit {
     private auth: AuthService,
 
 
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
+    @Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit(): void {
     console.log(this.data);
@@ -52,7 +55,8 @@ export class ExpansesComponent implements OnInit {
     if (this.expansesForm.valid){
       const data = {
         ...this.expansesForm.value,
-        ttype: this.data.ttype
+        ttype: this.data.ttype,
+
       };
       // @ts-ignore
 
@@ -61,6 +65,7 @@ export class ExpansesComponent implements OnInit {
 
       this.http.post('/api/transactions', data, _header).subscribe(r => {
         console.log(r);
+        console.log(data);
         this._snackBar.openFromComponent(MessageComponent, {duration: 3000, panelClass: ['white-snackbar']});
       });
 
@@ -70,16 +75,17 @@ export class ExpansesComponent implements OnInit {
 
   }
 
+  // tslint:disable-next-line:typedef
   getAllCategories()
   {
 
     // tslint:disable-next-line:variable-name
     const _header = {headers: new HttpHeaders({Authorization: this.auth.token})};
 
-    this.http.get('/api/transactiontypeall', _header).subscribe((r : any) => {
-      this.categories=r;
+    this.http.get('/api/transactiontypeall', _header).subscribe((r: any) => {
+      this.categories = r;
       console.log(r);
-      //this.currentBalanceForU=r.current_balance;
+      // this.currentBalanceForU=r.current_balance;
       // this._snackBar.openFromComponent(MessageComponent, {duration: 3000, panelClass: ['white-snackbar']});
     });
 

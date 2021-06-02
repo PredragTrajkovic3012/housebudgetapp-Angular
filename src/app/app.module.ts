@@ -5,7 +5,7 @@ import {BrowserModule, DomSanitizer} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MaterialModule} from "./shared/material.module";
-import {FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormControl, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { RegisterComponent } from './register/register.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -49,23 +49,20 @@ import { Login2Component } from './login2/login2.component';
 
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MaterialModule,
-    BrowserModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatIconModule,
-    FlexLayoutModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MaterialModule,
+        BrowserModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatIconModule,
+        FlexLayoutModule,
+        FormsModule
 
 
-
-
-
-
-  ],
+    ],
   entryComponents:[MessageComponent],
   providers: [AuthService,RouterGuardGuard,],
   bootstrap: [AppComponent]

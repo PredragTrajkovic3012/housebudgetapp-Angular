@@ -16,6 +16,8 @@ export class TransactionsComponent implements OnInit
 {
   detailflag = false;
   currentBalanceForU = '0';
+  transactions = [];
+  spentOn = [];
 
 
   constructor(
@@ -31,6 +33,8 @@ export class TransactionsComponent implements OnInit
       console.log(r);
     });
     this.getTotalBalanceforUser();
+    this.loadHistory();
+    this.loadSpentOn();
   }
   doSomething(){
     console.log('alo');
@@ -61,11 +65,39 @@ export class TransactionsComponent implements OnInit
 
       const _header = {headers: new HttpHeaders({Authorization: this.auth.token})};
 
-      this.http.get('/api/transactionsbalance', _header).subscribe((r : any) => {
+      this.http.get('/api/transactionsbalance', _header).subscribe((r: any) => {
         console.log(r.current_balance);
-        this.currentBalanceForU=r.current_balance;
+        this.currentBalanceForU = r.current_balance;
        // this._snackBar.openFromComponent(MessageComponent, {duration: 3000, panelClass: ['white-snackbar']});
-      });
+      }, error => {console.log('greska prilikom ucitavanja balansa'); });
+
+  }
+  loadHistory()
+  {
+    const _header = {headers: new HttpHeaders({Authorization: this.auth.token})};
+
+    this.http.get('/api/transactions', _header).subscribe((r: any) => {
+      console.log(r.current_balance);
+      this.transactions = r;
+
+      // this._snackBar.openFromComponent(MessageComponent, {duration: 3000, panelClass: ['white-snackbar']});
+    }, error => {console.log('greska prilikom ucitavanja istorije transakcija'); });
+
+  }
+
+  // tslint:disable-next-line:typedef
+  loadSpentOn()
+  {
+    // tslint:disable-next-line:variable-name
+    const _header = {headers: new HttpHeaders({Authorization: this.auth.token})};
+
+    this.http.get('/api/transactiontypeamount', _header).subscribe((r: any) => {
+      console.log(r);
+      this.spentOn = r;
+
+      // this._snackBar.openFromComponent(MessageComponent, {duration: 3000, panelClass: ['white-snackbar']});
+    }, error => {console.log('greska prilikom ucitavanja spentOn'); });
+
 
   }
 

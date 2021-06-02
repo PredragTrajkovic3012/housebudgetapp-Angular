@@ -462,7 +462,7 @@
   line-height: 43px;
 
   color: rgba(16, 16, 16, 0.85);
-  margin-left: 25px;
+  margin-left: 140px;
   margin-top:10px;
   margin-bottom: 2px;
 
@@ -473,7 +473,7 @@
   font-size: 16px;
   line-height: 19px;
   color: rgba(16, 16, 16, 0.6);
-  margin-left: -95px;
+  margin-left: 30px;
   margin-top: -25px;
 }
 
@@ -638,6 +638,8 @@
 {
   //padding-right: 10px;
   padding-top: 0px;
+  flex-direction: row !important;
+
 
 
 
@@ -673,6 +675,133 @@
   line-height: 36px;
   color: #5E9C60;
 }
+
+
+.historybox
+{
+  padding: 15px 36px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 431px;
+  margin-top: 5px;
+
+
+}
+
+
+.history
+{
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #1C092C;
+  margin-left: -310px;
+
+}
+
+.date-icon
+{
+  margin-left: 7px;
+  width: 100px;
+}
+
+.day
+{
+  font-family: Lato;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  opacity: 0.7;
+  margin-bottom: 0px;
+}
+.month{
+
+  font-family: Lato;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.infoholder{
+  width: 400px;
+  //background-color: aliceblue;
+}
+.history-info
+{
+  margin-right: 28px;
+  align-items: center;
+  text-align: right !important;
+  display: initial !important;
+
+}
+.historyp1{
+  font-family: Lato;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  opacity: 0.7;
+  margin-bottom: 2px;
+ // align-self: end;
+  text-align: right !important;
+}
+.historyp2{
+  font-family: Lato;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  opacity: 0.85;
+  //align-self: end;
+  text-align: right !important;
+}
+.valute{
+  font-family: Lato;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+
+.divspenton
+{
+  width: 84px;
+  height: 145px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 40px;
+
+  //transform: rotate(90deg);
+
+}
+
+.ponwhat{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 18px;
+}
+.pprice{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(16, 16, 16, 0.85);
+  margin-top: -25px;
+}
+.spenticon
+{
+  width: 34px;
+  height: 34px;
+  margin-bottom: 20px;
+
+}
+
+
+
+
 
 
 

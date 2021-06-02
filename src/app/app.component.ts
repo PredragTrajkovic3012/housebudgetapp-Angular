@@ -34,6 +34,10 @@ export class AppComponent {
     iconRegistry.addSvgIcon(
       'square',
       sanitizer.bypassSecurityTrustResourceUrl('assets/images/square.svg'));
+    iconRegistry.addSvgIcon(
+      'nullH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/broken_image.svg'));
+
 
     //Ikonice za app(zelene)
     iconRegistry.addSvgIcon(
@@ -78,15 +82,57 @@ export class AppComponent {
     iconRegistry.addSvgIcon(
       'equipment',
       sanitizer.bypassSecurityTrustResourceUrl('assets/images/category_icons/equipment.svg'));
-
-
-
-
-
-
-
+    iconRegistry.addSvgIcon(
+      'equipment2',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/equipment.svg'));
 
     //
+ //ikonice history
+    iconRegistry.addSvgIcon(
+      'billsH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/bills.svg'));
+    iconRegistry.addSvgIcon(
+      'carH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/car.svg'));
+    iconRegistry.addSvgIcon(
+      'clothesH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/clothes.svg'));
+    iconRegistry.addSvgIcon(
+      'communicationH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/communication.svg'));
+    iconRegistry.addSvgIcon(
+      'eatoutH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/eatout.svg'));
+    iconRegistry.addSvgIcon(
+      'entertainmentH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/entertainment.svg'));
+    iconRegistry.addSvgIcon(
+      'giftH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/gift.svg'));
+    iconRegistry.addSvgIcon(
+      'healthH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/health.svg'));
+    iconRegistry.addSvgIcon(
+      'petH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/pet.svg'));
+    iconRegistry.addSvgIcon(
+      'salaryH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/salary.svg'));
+    iconRegistry.addSvgIcon(
+      'taxiH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/taxi.svg'));
+    iconRegistry.addSvgIcon(
+      'toiletriesH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/toiletries.svg'));
+    iconRegistry.addSvgIcon(
+      'transportH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/transport.svg'));
+    iconRegistry.addSvgIcon(
+      'equipmentH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/equipment.svg'));
+    iconRegistry.addSvgIcon(
+      'equipmentH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/equipment.svg'));
 
 
   }

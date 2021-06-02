@@ -7,13 +7,13 @@
     <input matInput type="number" class="example-right-align" formControlName="amount">
     <span matSuffix class="dollar">$&nbsp;</span>
   </mat-form-field>
-    <form class="example-form">
+    <div class="example-form">
       <mat-form-field class="example-full-width" style="width: 366px;">
         <mat-label>Enter description</mat-label>
         <input matInput placeholder="Ex. Pizza" value="Pizza" formControlName="description">
       </mat-form-field>
 
-    </form>
+    </div>
   </div>
   <p class="choose">Choose category</p>
   <!--sekcija biranja-->
@@ -28,7 +28,7 @@
         </div>
       </div>
       <!--    <mat-icon svgIcon="square" class="checkicon2" ></mat-icon>-->
-      <mat-radio-button >
+      <mat-radio-button  [value]="category.id"  checked="true" formControlName="transaction_type" ngDefaultControl >
       </mat-radio-button>
     </div>
 
