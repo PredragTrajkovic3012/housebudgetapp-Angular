@@ -16,6 +16,8 @@ export class TransactionsComponent implements OnInit
 {
   detailflag = false;
   currentBalanceForU = '0';
+  outcomeTransactions = '0';
+  incomeTransactions = '0';
   transactions = [];
   spentOn = [];
 
@@ -35,6 +37,7 @@ export class TransactionsComponent implements OnInit
     this.getTotalBalanceforUser();
     this.loadHistory();
     this.loadSpentOn();
+    this.loadOutcomeTransactions();
   }
   doSomething(){
     console.log('alo');
@@ -50,8 +53,8 @@ export class TransactionsComponent implements OnInit
   }
 
   onAddIncomeOpen(){
-    this.dialog.open(AddincomeComponent, {
-      data: {exampl: 'pera income'}
+    this.dialog.open(ExpansesComponent, {
+      data: {ttype: 'income'}
     } as MatDialogConfig).afterClosed().subscribe(r => {
       console.log(r);
     });
@@ -95,9 +98,35 @@ export class TransactionsComponent implements OnInit
       console.log(r);
       this.spentOn = r;
 
-      // this._snackBar.openFromComponent(MessageComponent, {duration: 3000, panelClass: ['white-snackbar']});
+
     }, error => {console.log('greska prilikom ucitavanja spentOn'); });
 
+
+  }
+  loadOutcomeTransactions()
+  {
+    const _header = {headers: new HttpHeaders({Authorization: this.auth.token})};
+
+    this.http.get('/api/transactionsoutcomeincome', _header).subscribe((r: any) => {
+      console.log(r);
+      this.outcomeTransactions = Math.abs(r.outcome) +'$';
+
+
+      this.incomeTransactions=r.income + '$';
+
+
+    }, error => {console.log('greska prilikom ucitavanja outcome Transackcija'); });
+
+  }
+  // tslint:disable-next-line:typedef
+  changeDate(subtract)
+  {
+
+    if (subtract){
+
+    }else {
+
+    }
 
   }
 

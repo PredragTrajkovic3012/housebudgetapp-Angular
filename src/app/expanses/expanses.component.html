@@ -1,6 +1,6 @@
 <div class="background">
 <div fxLayout="column" fxLayoutAlign="space-between center" class="globalExpanses" [formGroup]="expansesForm">
-  <p class="expanses">Add expanses</p>
+  <p class="expanses">Add {{this.data.ttype}}</p>
   <div class="enterfield">
   <mat-form-field appearance="fill" class="enterfield2" >
     <mat-label>Amount</mat-label>
@@ -19,7 +19,8 @@
   <!--sekcija biranja-->
 
   <div style="height: 350px;overflow: auto;" class="scrollpane">
-    <div *ngFor="let category of categories" fxLayout="row" fxLayoutAlign="space-between center" class="global-expanses2">
+    <div *ngFor="let category of categories" fxLayout="row" fxLayoutAlign="space-between center" class="global-expanses2"
+         [style.background]="expansesForm.value.transaction_type===category.id ? '#F2F9F2':'#fff'">
       <div fxLayout="row" class="icon-and-text">
         <mat-icon [svgIcon]="category.image" class="spenticon"></mat-icon>
         <div class="text">

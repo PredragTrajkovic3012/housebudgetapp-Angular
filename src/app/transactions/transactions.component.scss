@@ -564,7 +564,8 @@
 .expanses2
 {
   width: 170px;
-  margin-left: -50px;
+  margin-left: 6px;
+  flex: inherit;
 
 }
 .exp{
@@ -572,6 +573,7 @@
   font-weight: normal;
   font-size: 12px;
   line-height: 14px;
+  margin-left: -110px;
 
   color: #000000;
 
@@ -586,6 +588,11 @@
   font-size: 20px;
   line-height: 24px;
   color: rgba(16, 16, 16, 0.85);
+  text-align: left !important;
+  align-self: flex-start;
+  margin-left: 4px;
+  //margin-left: -100px;
+
 }
 
 
@@ -612,7 +619,7 @@
   font-weight: normal;
   font-size: 12px;
   line-height: 14px;
-
+  margin-left: -12px;
   color: #5E9C60;
 }
 .incnum
@@ -622,6 +629,9 @@
   font-size: 20px;
   line-height: 0px;
   color: #5E9C60;
+  align-self: flex-start;
+  margin-left: 57px;
+
 
 }
 .spenton-seeall

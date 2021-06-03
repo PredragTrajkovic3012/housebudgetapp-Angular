@@ -66,7 +66,7 @@ export class ExpansesComponent implements OnInit {
       this.http.post('/api/transactions', data, _header).subscribe(r => {
         console.log(r);
         console.log(data);
-        this._snackBar.openFromComponent(MessageComponent, {duration: 3000, panelClass: ['white-snackbar']});
+        this._snackBar.openFromComponent(MessageComponent, {duration: 3000, verticalPosition: 'top', panelClass: ['white-snackbar']});
       });
 
     }else{

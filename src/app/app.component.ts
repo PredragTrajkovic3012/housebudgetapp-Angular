@@ -37,6 +37,9 @@ export class AppComponent {
     iconRegistry.addSvgIcon(
       'nullH',
       sanitizer.bypassSecurityTrustResourceUrl('assets/images/broken_image.svg'));
+    iconRegistry.addSvgIcon(
+      'group',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/group_black.svg'));
 
 
     //Ikonice za app(zelene)
@@ -133,6 +136,10 @@ export class AppComponent {
     iconRegistry.addSvgIcon(
       'equipmentH',
       sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/equipment.svg'));
+    iconRegistry.addSvgIcon(
+      'groceriesH',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/images/history_icons/groceries.svg'));
+
 
 
   }
