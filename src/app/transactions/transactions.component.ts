@@ -3,9 +3,10 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {AuthService} from '../login/auth.service';
 import {ExpansesComponent} from '../expanses/expanses.component';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
-import {AddincomeComponent} from '../addincome/addincome.component';
+
 import {MessageComponent} from '../message/message.component';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-transactions',
@@ -15,33 +16,45 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class TransactionsComponent implements OnInit
 {
   detailflag = false;
-  currentBalanceForU = '0';
-  outcomeTransactions = '0';
-  incomeTransactions = '0';
-  transactions = [];
-  spentOn = [];
+  data;
+  months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  selectedMonth = 0;
+  currentTime = new Date();
+  curyear = this.currentTime.getFullYear();
+  monthflag = this.currentTime.getMonth();
+
+
 
 
   constructor(
     private http: HttpClient,
     private auth: AuthService,
+    private activatedRoute: ActivatedRoute,
     private dialog: MatDialog,
     private _snackBar: MatSnackBar,
   ) { }
 
   ngOnInit(): void {
-    const _header = {headers: new HttpHeaders({Authorization: this.auth.token})};
-    this.http.get('/api/transactions', _header).subscribe(r => {
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.getData();
+
+    });
+
+  }
+  getData(){
+    const _options: any = {};
+    _options['headers'] = new HttpHeaders({Authorization: this.auth.token});
+    _options['params'] = {month: this.monthflag, year:this.curyear};
+    this.http.get('/api/transactions', _options).subscribe((r: any) => {
+      this.data = r.res;
       console.log(r);
     });
-    this.getTotalBalanceforUser();
-    this.loadHistory();
-    this.loadSpentOn();
-    this.loadOutcomeTransactions();
+
   }
   doSomething(){
     console.log('alo');
   }
+
 
   // tslint:disable-next-line:typedef
   onExpensesOpen(){
@@ -52,6 +65,7 @@ export class TransactionsComponent implements OnInit
     });
   }
 
+  // tslint:disable-next-line:typedef
   onAddIncomeOpen(){
     this.dialog.open(ExpansesComponent, {
       data: {ttype: 'income'}
@@ -63,74 +77,44 @@ export class TransactionsComponent implements OnInit
     this.detailflag = !this.detailflag;
   }
 
-  getTotalBalanceforUser()
-  {
-
-      const _header = {headers: new HttpHeaders({Authorization: this.auth.token})};
-
-      this.http.get('/api/transactionsbalance', _header).subscribe((r: any) => {
-        console.log(r.current_balance);
-        this.currentBalanceForU = r.current_balance;
-       // this._snackBar.openFromComponent(MessageComponent, {duration: 3000, panelClass: ['white-snackbar']});
-      }, error => {console.log('greska prilikom ucitavanja balansa'); });
-
-  }
-  loadHistory()
-  {
-    const _header = {headers: new HttpHeaders({Authorization: this.auth.token})};
-
-    this.http.get('/api/transactions', _header).subscribe((r: any) => {
-      console.log(r.current_balance);
-      this.transactions = r;
-
-      // this._snackBar.openFromComponent(MessageComponent, {duration: 3000, panelClass: ['white-snackbar']});
-    }, error => {console.log('greska prilikom ucitavanja istorije transakcija'); });
-
-  }
-
-  // tslint:disable-next-line:typedef
-  loadSpentOn()
-  {
-    // tslint:disable-next-line:variable-name
-    const _header = {headers: new HttpHeaders({Authorization: this.auth.token})};
-
-    this.http.get('/api/transactiontypeamount', _header).subscribe((r: any) => {
-      console.log(r);
-      this.spentOn = r;
-
-
-    }, error => {console.log('greska prilikom ucitavanja spentOn'); });
-
-
-  }
-  loadOutcomeTransactions()
-  {
-    const _header = {headers: new HttpHeaders({Authorization: this.auth.token})};
-
-    this.http.get('/api/transactionsoutcomeincome', _header).subscribe((r: any) => {
-      console.log(r);
-      this.outcomeTransactions = Math.abs(r.outcome) +'$';
-
-
-      this.incomeTransactions=r.income + '$';
-
-
-    }, error => {console.log('greska prilikom ucitavanja outcome Transackcija'); });
-
-  }
-  // tslint:disable-next-line:typedef
   changeDate(subtract)
   {
 
     if (subtract){
+      if (this.monthflag === 11){
+        this.monthflag = 0;
+        this.curyear++;
+
+      }else{
+        this.monthflag++;
+      }
+
 
     }else {
+      if (this.monthflag === 0){
+        this.monthflag = 11;
+        this.curyear--;
+
+      }else{
+        this.monthflag--;
+      }
 
     }
+    this.getData();
+  }
+  // tslint:disable-next-line:typedef
+  getDataforDate(){
+
+    const _data = {
+      month: this.monthflag,
+      year: this.curyear,
+    };
+    const _header = {headers: new HttpHeaders({Authorization: this.auth.token})};
+    this.http.get('/api/transactions',  _header).subscribe((r: any) => {
+      this.data = r.res;
+      console.log(r);
+    });
 
   }
-
-
-
 
 }

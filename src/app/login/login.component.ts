@@ -70,11 +70,6 @@ export class LoginComponent implements OnInit {
       this.http.post('/api/users/login', data).subscribe((r:any) => {
         console.log(r);
         this.auth.setToken(r.id_session);
-
-
-
-
-
         this.isLoading = false;
         this.router.navigateByUrl('/transactions');
       }, error => {

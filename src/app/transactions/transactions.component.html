@@ -1,6 +1,6 @@
 
-
-<div fxLayout="column" fxLayoutAlign="space-between center" class="global_form">
+<!--*ngIf="data"-->
+<div *ngIf="data" fxLayout="column" fxLayoutAlign="space-between center" class="global_form">
   <div fxLayout="row" fxLayoutAlign="center center" class="navbar">
     <!--Ovoo je mininav -->
 
@@ -43,25 +43,48 @@
 
     <!--Ovo je mini nav -->
   </div>
-  <div fxLayout="row" fxLayoutAlign="space-between center" class="global_datapicker" >
-    <!--datapicker -->
-    <div fxLayout="column" fxLayoutAlign="center center" >
-
-      <p class="datapicker">
-        Avgust
-        <button mat-icon-button class="chevron" (click)="changeDate(false)">
-          <mat-icon class="chevron">chevron_left</mat-icon>
-        </button>
-        <button mat-icon-button (click)="changeDate(true)">
-          <mat-icon class="chevron">chevron_right</mat-icon>
-        </button>
-
-      </p>
-      <p class="datapicker2">20 sep,2021</p>
-
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="global_datapicker">
+    <div fxLayout="row" fxLayoutAlign="start center" >
+      <div class="datapicker_month">{{months[monthflag]}}</div>
+      <div class="datapicker_year">{{curyear}}</div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" >
+      <button mat-icon-button class="chevron" (click)="changeDate(false)">
+        <mat-icon class="chevron">chevron_left</mat-icon>
+      </button>
+      <button mat-icon-button (click)="changeDate(true)">
+        <mat-icon class="chevron">chevron_right</mat-icon>
+      </button>
     </div>
 
+
   </div>
+<!--  <div fxLayout="row" fxLayoutAlign="space-between center" class="global_datapicker" >-->
+<!--    &lt;!&ndash;datapicker &ndash;&gt;-->
+<!--    <div fxLayout="column" fxLayoutAlign="center center" >-->
+
+<!--      <div class="datapicker" >-->
+<!--&lt;!&ndash;        (click)="picker.open()"&ndash;&gt;-->
+<!--        {{months[monthflag]}}-->
+<!--&lt;!&ndash;        <mat-form-field appearance="fill" fxHide>&ndash;&gt;-->
+<!--&lt;!&ndash;          <input matInput [matDatepicker]="picker">&ndash;&gt;-->
+<!--&lt;!&ndash;          <mat-datepicker #picker startView="year" ></mat-datepicker>&ndash;&gt;-->
+<!--&lt;!&ndash;        </mat-form-field>&ndash;&gt;-->
+<!--        <div fxLayout="row" fxLayoutAlign="space-between center"  >-->
+<!--        <button mat-icon-button class="chevron" (click)="changeDate(false)">-->
+<!--          <mat-icon class="chevron">chevron_left</mat-icon>-->
+<!--        </button>-->
+<!--        <button mat-icon-button (click)="changeDate(true)">-->
+<!--          <mat-icon class="chevron">chevron_right</mat-icon>-->
+<!--        </button>-->
+<!--        </div>-->
+
+<!--      </div>-->
+<!--      <p class="datapicker2">{{curyear}}</p>-->
+
+<!--    </div>-->
+
+<!--  </div>-->
   <!--datapicker-->
   <!--addtransaction-->
   <div fxLayout="column" fxLayoutAlign="space-between center" class="addtransaction" >
@@ -72,13 +95,13 @@
 <!--    <ng-container *ngIf="detailflag">-->
       <div fxLayout="column" fxLayoutAlign="space-between center" class="div-details" >
         <p class="p-details1">total</p>
-        <p class="p-details2">${{this.currentBalanceForU}}</p>
+        <p class="p-details2">${{data.balance.current_balance}}</p>
       </div>
 <!--    </ng-container>-->
     <div fxLayout="row" fxLayoutAlign="space-between center" class="expanses">
       <div fxLayout="column" fxLayoutAlign="center center" class="expanses2">
         <p class="exp">Expanses</p>
-        <p class="expnum">{{this.outcomeTransactions}}</p>
+        <p class="expnum">{{data.outcome_income.outcome}}$</p>
       </div>
       <button mat-icon-button (click)="onExpensesOpen()"  style="margin-right:2px">
         <mat-icon svgIcon="plus"></mat-icon>
@@ -87,7 +110,7 @@
     <div fxLayout="row" fxLayoutAlign="space-between center" class="income" >
       <div fxLayout="column" fxLayoutAlign="center center" class="income2" >
         <p class="inc">Income</p>
-        <p class="incnum">{{this.incomeTransactions}}</p>
+        <p class="incnum">{{data.outcome_income.income}}$</p>
       </div>
       <button mat-icon-button  style="margin-right:2px" (click)="onAddIncomeOpen()">
         <mat-icon svgIcon="plus-green" ></mat-icon>
@@ -104,7 +127,7 @@
       <p class="details">See all</p>
     </div>
     <div fxLayout="row" fxLayoutGap="10px">
-      <div   fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="spenton"  *ngFor="let spent of spentOn">
+      <div   fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px" class="spenton"  *ngFor="let spent of data.order_spent">
         <!--sekcija spenton -->
 
         <div fxLayout="column" fxLayoutAlign="space-between center" class="divspenton" >
@@ -125,7 +148,7 @@
 
   <div  fxLayout="column" fxLayoutAlign="space-between center" class="historybox" >
     <p class="history">History</p>
-    <div *ngFor="let transaction of transactions" fxLayout="row" fxLayoutAlign="space-between center"  class="infoholder" >
+    <div *ngFor="let transaction of data.transakcije" fxLayout="row" fxLayoutAlign="space-between center"  class="infoholder" >
       <div fxLayout="row" fxLayoutAlign="center center" class="date-icon">
         <div fxLayout="column" fxLayoutAlign="space-between center" >
           <p class="day">{{transaction.date.slice(0,2) }}</p>

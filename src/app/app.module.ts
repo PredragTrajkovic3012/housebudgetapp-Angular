@@ -10,7 +10,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { RegisterComponent } from './register/register.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { LoginComponent } from './login/login.component';
-import { NavigationComponent } from './navigation/navigation.component';
+
 import { TransactionsComponent } from './transactions/transactions.component';
 import {LoadingSpinnerComponent} from "./shared/loading-spinner/loading-spinner.component";
 import {AuthService} from "./login/auth.service";
@@ -21,10 +21,14 @@ import { ExpansesComponent } from './expanses/expanses.component';
 import { Navigation2Component } from './navigation2/navigation2.component';
 import { SpentonComponent } from './spenton/spenton.component';
 import { HomeComponent } from './home/home.component';
-import { AddincomeComponent } from './addincome/addincome.component';
+
 import { MessageComponent } from './message/message.component';
 import { Register2Component } from './register2/register2.component';
 import { Login2Component } from './login2/login2.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatFormFieldModule} from "@angular/material/form-field";
+
 
 
 
@@ -33,14 +37,12 @@ import { Login2Component } from './login2/login2.component';
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    NavigationComponent,
     TransactionsComponent,
     LoadingSpinnerComponent,
     ExpansesComponent,
     Navigation2Component,
     SpentonComponent,
     HomeComponent,
-    AddincomeComponent,
     Register2Component,
     Login2Component,
 
@@ -59,12 +61,13 @@ import { Login2Component } from './login2/login2.component';
         HttpClientModule,
         MatIconModule,
         FlexLayoutModule,
-        FormsModule
+        FormsModule,
+
 
 
     ],
   entryComponents:[MessageComponent],
-  providers: [AuthService,RouterGuardGuard,],
+  providers: [AuthService, RouterGuardGuard,],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

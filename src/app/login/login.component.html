@@ -22,10 +22,11 @@
         <div class="example-container" >
           <mat-form-field appearance="fill" class="inputwraper">
             <mat-label>Enter your username</mat-label>
+<!--            ngModel-->
+<!--            name="username"-->
             <input matInput placeholder="6 character/ upercase leter/ special letter/ uniq" [formControl]="username" required formControlName="username"
-            class="form-control"
-            ngModel
-            name="username">
+
+            >
             <mat-error *ngIf="username.invalid">{{getErrorMessage()}}</mat-error>
 
           </mat-form-field>
@@ -35,8 +36,9 @@
         <div class="example-container">
           <mat-form-field appearance="fill" class="inputwraper">
             <mat-label>Enter your password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" class="form-control" formControlName="password"
-            ngModel name="password"
+<!--            ngModel name="password"-->
+            <input matInput [type]="hide ? 'password' : 'text'"  formControlName="password"
+
             required
             minlength="6">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"

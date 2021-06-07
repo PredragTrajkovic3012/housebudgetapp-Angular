@@ -456,48 +456,37 @@
 
 
 
-.datapicker{
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 43px;
 
-  color: rgba(16, 16, 16, 0.85);
-  margin-left: 140px;
-  margin-top:10px;
-  margin-bottom: 2px;
-
-
-}
-.datapicker2{
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-  color: rgba(16, 16, 16, 0.6);
-  margin-left: 30px;
-  margin-top: -25px;
-}
-
-.chevron
-{
-  margin-bottom: 15px;
-
-
-}
-
-.datapicker3{
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  color: #000000;
-  margin-left: 230px;
-  margin-top: 10px;
-}
 .global_datapicker
 {
-  //: 150px;
+
   width: 100%;
   max-width: 430px;
   margin-top:40px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 24px -10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+}
+.datapicker_month
+{
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
+  color: rgba(16, 16, 16, 0.85);
+  margin-right: 8px;
+  width:130px ;
+}
+.datapicker_year
+{
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 34px;
+  color: rgba(0, 0, 0, 0.6);
 
 }
 
@@ -630,7 +619,7 @@
   line-height: 0px;
   color: #5E9C60;
   align-self: flex-start;
-  margin-left: 57px;
+  margin-left: 58px;
 
 
 }
